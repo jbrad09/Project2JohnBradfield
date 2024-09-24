@@ -16,19 +16,17 @@ class RandomColorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_random_color)
 
-        rootView.setOnClickListener { it.setBackgroundColor(getRandomColor()) }
+        rootView.setOnClickListener { rootView.setBackgroundColor(getRandomColor()) }
     }
 
     private fun getRandomColor(): Int {
-        // Get random color// Get random color// Get random color// Get random color
-        getRandomColor()
-
+        // Generate a random color
         val rnd = Random()
         return Color.argb(
-            255,
-            rnd.nextInt(256),
-            rnd.nextInt(256),
-            rnd.nextInt(256)
+            255, // Alpha value (fully opaque)
+            rnd.nextInt(256), // Red value (0-255)
+            rnd.nextInt(256), // Green value (0-255)
+            rnd.nextInt(256)  // Blue value (0-255)
         )
     }
 }
